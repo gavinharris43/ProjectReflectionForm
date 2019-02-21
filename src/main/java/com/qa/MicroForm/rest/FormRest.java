@@ -1,8 +1,8 @@
 package com.qa.MicroForm.rest;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -13,11 +13,11 @@ import com.qa.MicroForm.service.FormService;
 @RestController
 public class FormRest {
 	
-	@Autowired
+//	@Autowired
 	private FormService service;
 	
 	@PostMapping("${path.createForm}")
-	public ReflectionForm createForm(@PathVariable String reflectionForm) {
+	public ReflectionForm createForm(@RequestBody ReflectionForm reflectionForm) {
 		return service.createForm(reflectionForm);
 	}
 	

@@ -1,15 +1,12 @@
 package com.qa.MicroForm.persistence.domain;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
 
-@Entity
+
 public class ReflectionForm {
 
-	@Id
-	@GeneratedValue
 	private Long formId;
+	
+	private Long traineeId;
 	
 	private int weekNumber;
 	
@@ -27,13 +24,14 @@ public class ReflectionForm {
 		
 	}
 	
-	public ReflectionForm(int weekNumber, int howsYourWeek, String whatWentWell, String howToKeepDoingWell, String whatWentBad, String howToStopDoingBad) {
+	public ReflectionForm(int weekNumber, int howsYourWeek, String whatWentWell, String howToKeepDoingWell, String whatWentBad, String howToStopDoingBad, Long traineeId) {
 		this.setWeekNumber(weekNumber);
 		this.setHowsYourWeek(howsYourWeek);
 		this.setWhatWentWell(whatWentWell);
 		this.setHowToKeepDoingWell(howToKeepDoingWell);
 		this.setWhatWentBad(whatWentBad);
 		this.setHowToStopDoingBad(howToStopDoingBad);
+		this.setTraineeId(traineeId);
 	}
 
 	public int getHowsYourWeek() {
@@ -90,5 +88,13 @@ public class ReflectionForm {
 
 	public void setWeekNumber(int weekNumber) {
 		this.weekNumber = weekNumber;
+	}
+
+	public Long getTraineeId() {
+		return traineeId;
+	}
+
+	public void setTraineeId(Long traineeId) {
+		this.traineeId = traineeId;
 	}
 }

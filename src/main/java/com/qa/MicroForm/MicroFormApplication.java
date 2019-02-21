@@ -9,5 +9,7 @@ public class MicroFormApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(MicroFormApplication.class, args);
 	}
+	
+	//@Bean
 
 }
