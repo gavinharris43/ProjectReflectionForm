@@ -3,12 +3,12 @@ package com.qa.MicroForm.service;
 
 import java.util.List;
 
-
+import org.springframework.stereotype.Service;
 
 import com.qa.MicroForm.persistence.domain.ReflectionForm;
 
 
-
+@Service
 public class FormServiceImpl implements FormService{
 
 	
