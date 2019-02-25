@@ -1,7 +1,8 @@
 package com.qa.MicroForm.service;
 
 
-import java.util.List;
+import java.util.ArrayList;
+
 
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
@@ -27,7 +28,7 @@ public class FormServiceImpl implements FormService{
 
 
 	@Override
-	public List<ReflectionForm> getAllForms() {
+	public ArrayList<ReflectionForm> getAllForms() {
 		return null;
 	}
 
@@ -43,7 +44,7 @@ public class FormServiceImpl implements FormService{
 		return null;
 	}
 
+		
+}	
 
-	
 
-}

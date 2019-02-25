@@ -1,7 +1,7 @@
 package com.qa.MicroForm.service;
 
 
-import java.util.List;
+import java.util.ArrayList;
 
 import org.springframework.http.ResponseEntity;
 
@@ -12,7 +12,7 @@ public interface FormService {
 
 	ReflectionForm createForm(ReflectionForm reflectionForm);
 	
-	List<ReflectionForm> getAllForms();
+	ArrayList<ReflectionForm> getAllForms();
 	
 	ReflectionForm getForm(Long id);
 	

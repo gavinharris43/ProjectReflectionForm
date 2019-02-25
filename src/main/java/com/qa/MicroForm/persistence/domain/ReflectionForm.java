@@ -1,7 +1,8 @@
 package com.qa.MicroForm.persistence.domain;
 
+import javax.persistence.Entity;
 
-
+//@Entity
 public class ReflectionForm {
 
 	private Long formId;

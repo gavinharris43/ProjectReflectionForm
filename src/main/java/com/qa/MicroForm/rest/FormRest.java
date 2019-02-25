@@ -1,8 +1,14 @@
 package com.qa.MicroForm.rest;
 
+import java.util.ArrayList;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.http.ResponseEntity;
 import org.springframework.jms.core.JmsTemplate;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -29,6 +35,16 @@ public class FormRest {
 	public ReflectionForm createForm(@RequestBody ReflectionForm reflectionForm) {
 		sendToQueue(reflectionForm);
 		return service.createForm(reflectionForm);
+	}
+	
+	@GetMapping("${queue.readAllForms}")
+	public ArrayList<ReflectionForm> getAllForms() {
+		return (ArrayList<ReflectionForm>) service.getAllForms();
+	}
+	
+	@DeleteMapping("${path.deleteTrainee}")
+	public ResponseEntity<Object> deleteTrainee(@PathVariable Long id) {
+		return service.deleteForm(id);
 	}
 	
 	private void sendToQueue(ReflectionForm form){
