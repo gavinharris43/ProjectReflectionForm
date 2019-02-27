@@ -1,13 +1,12 @@
-package com.qa.MicroForm.persistence.domain;
+package com.qa.InspectorFacade.persistence.domain;
 
-import javax.persistence.Entity;
-
-//@Entity
-public class ReflectionForm {
+public class SentReflectionForm {
 
 	private Long formId;
 	
 	private Long traineeId;
+	
+	private String email;
 	
 	private int weekNumber;
 	
@@ -21,18 +20,46 @@ public class ReflectionForm {
 	
 	private String howToStopDoingBad;
 	
-	public ReflectionForm() {
-		
+	public SentReflectionForm() {}
+	
+	public SentReflectionForm(ReflectionForm reflectionForm) {
+		this.traineeId = reflectionForm.getTraineeId();
+		this.email = reflectionForm.getEmail();
+		this.howsYourWeek = reflectionForm.getHowsYourWeek();
+		this.whatWentWell = reflectionForm.getWhatWentWell();
+		this.howToKeepDoingWell = reflectionForm.getHowToKeepDoingWell();
+		this.whatWentBad = reflectionForm.getWhatWentBad();
+		this.howToStopDoingBad = reflectionForm.getHowToStopDoingBad();
 	}
 	
-	public ReflectionForm(int weekNumber, int howsYourWeek, String whatWentWell, String howToKeepDoingWell, String whatWentBad, String howToStopDoingBad, Long traineeId) {
-		this.setWeekNumber(weekNumber);
-		this.setHowsYourWeek(howsYourWeek);
-		this.setWhatWentWell(whatWentWell);
-		this.setHowToKeepDoingWell(howToKeepDoingWell);
-		this.setWhatWentBad(whatWentBad);
-		this.setHowToStopDoingBad(howToStopDoingBad);
-		this.setTraineeId(traineeId);
+	public SentReflectionForm(Long traineeId, String email, int weekNumber, int howsYourWeek, String whatWentWell, String howToKeepDoingWell,
+			String whatWentBad, String howToStopDoingBad) {
+		
+		this.traineeId = traineeId;
+		this.email = email;
+		this.weekNumber = weekNumber;
+		this.howsYourWeek = howsYourWeek;
+		this.whatWentWell = whatWentWell;
+		this.howToKeepDoingWell = howToKeepDoingWell;
+		this.whatWentBad = whatWentBad;
+		this.howToStopDoingBad = howToStopDoingBad;
+	}
+	
+
+	public Long getTraineeId() {
+		return traineeId;
+	}
+
+	public void setTraineeId(Long traineeId) {
+		this.traineeId = traineeId;
+	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
 	}
 
 	public int getHowsYourWeek() {
@@ -89,13 +116,5 @@ public class ReflectionForm {
 
 	public void setWeekNumber(int weekNumber) {
 		this.weekNumber = weekNumber;
-	}
-
-	public Long getTraineeId() {
-		return traineeId;
-	}
-
-	public void setTraineeId(Long traineeId) {
-		this.traineeId = traineeId;
 	}
 }

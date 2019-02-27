@@ -1,11 +1,18 @@
-package com.qa.MicroForm.persistence.domain;
+package com.qa.InspectorFacade.persistence.domain;
 
-public class SentReflectionForm {
+import javax.persistence.Entity;
+import javax.persistence.Id;
 
-private Long formId;
+@Entity
+public class ReflectionForm {
+
+	@Id
+	private Long formId;
 	
 	private Long traineeId;
 	
+	private String email;
+
 	private int weekNumber;
 	
 	private int howsYourWeek;
@@ -18,18 +25,19 @@ private Long formId;
 	
 	private String howToStopDoingBad;
 	
-	public SentReflectionForm() {
+	public ReflectionForm() {
 		
 	}
 	
-	public SentReflectionForm(ReflectionForm reflectionForm) {
-		this.weekNumber = reflectionForm.getWeekNumber();
-		this.howsYourWeek = reflectionForm.getHowsYourWeek();
-		this.whatWentWell = reflectionForm.getWhatWentWell();
-		this.howToKeepDoingWell = reflectionForm.getHowToKeepDoingWell();
-		this.whatWentBad = reflectionForm.getWhatWentBad();
-		this.howToStopDoingBad = reflectionForm.getHowToStopDoingBad();
-		this.traineeId = reflectionForm.getTraineeId();
+	public ReflectionForm(Long traineeId, String email, int weekNumber, int howsYourWeek, String whatWentWell, String howToKeepDoingWell, String whatWentBad, String howToStopDoingBad) {
+		this.setTraineeId(traineeId);
+		this.setEmail(email);
+		this.setWeekNumber(weekNumber);
+		this.setHowsYourWeek(howsYourWeek);
+		this.setWhatWentWell(whatWentWell);
+		this.setHowToKeepDoingWell(howToKeepDoingWell);
+		this.setWhatWentBad(whatWentBad);
+		this.setHowToStopDoingBad(howToStopDoingBad);
 	}
 
 	public int getHowsYourWeek() {
@@ -94,5 +102,13 @@ private Long formId;
 
 	public void setTraineeId(Long traineeId) {
 		this.traineeId = traineeId;
+	}
+	
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
 	}
 }

@@ -1,4 +1,4 @@
-package com.qa.MicroForm.service;
+package com.qa.InspectorFacade.service;
 
 
 import java.util.ArrayList;
@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
-import com.qa.MicroForm.persistence.domain.ReflectionForm;
+import com.qa.InspectorFacade.persistence.domain.ReflectionForm;
 
 
 @Service
