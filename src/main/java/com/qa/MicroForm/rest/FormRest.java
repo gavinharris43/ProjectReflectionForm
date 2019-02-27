@@ -37,16 +37,6 @@ public class FormRest {
 		return service.createForm(reflectionForm);
 	}
 	
-	@GetMapping("${queue.readAllForms}")
-	public ArrayList<ReflectionForm> getAllForms() {
-		return (ArrayList<ReflectionForm>) service.getAllForms();
-	}
-	
-	@DeleteMapping("${path.deleteTrainee}")
-	public ResponseEntity<Object> deleteTrainee(@PathVariable Long id) {
-		return service.deleteForm(id);
-	}
-	
 	private void sendToQueue(ReflectionForm form){
         SentReflectionForm formToStore = new SentReflectionForm(form);
         jmsTemplate.convertAndSend(formQueue, formToStore);
